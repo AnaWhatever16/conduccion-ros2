@@ -7,13 +7,13 @@ def generate_launch_description():
             package='super_pkg',
             namespace='super_pkg',
             executable='adas',
-            name='sim'
+            name='sim1'
         ),
         Node(
             package='super_pkg',
             namespace='super_pkg',
             executable='speedometer',
-            name='sim'
+            name='sim2'
         ),
         Node(
             package='super_pkg',
