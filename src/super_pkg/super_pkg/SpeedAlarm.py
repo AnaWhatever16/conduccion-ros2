@@ -7,9 +7,12 @@ class SpeedAlarm(Node):
     def __init__(self):
         super().__init__('SpeedAlarm')
         self.get_logger().info('Initializing SpeedAlarm')
-        self.publisher = self.create_publisher(Float64, 'camera', 10)
-        self.subscriber = self.create_subscription(Float64, 'camera', self.queryAlarm, 10)
+        
+        self.publisher = self.create_publisher(Float64, 'camera_signal', 10)
+        
+        self.subscriber = self.create_subscription(Float64, 'camera_signal', self.queryAlarm, 10)
         self.subscriber = self.create_subscription(Float64, 'speed', self.speedCallback, 5)
+        
         self.realSpeed = 50.0
         msg = Float64()
         msg.data = self.realSpeed

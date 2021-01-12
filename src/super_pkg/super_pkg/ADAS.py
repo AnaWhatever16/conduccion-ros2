@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
-from example_interfaces.msg import String, Float64
+from example_interfaces.msg import Float64
 
 class ADAS(Node):
     def __init__(self):
         super().__init__('ADAS')
         self.get_logger().info('Initializing ADAS')
-        self.i = 0
         self.create_timer(0.1, self.publish_msg)
         self.publisher = self.create_publisher(Float64, 'speed', 10)
 
