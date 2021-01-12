@@ -20,8 +20,9 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-	   'power = super_pkg.power:main',
-	   'smartphone = super_pkg.smartphone:main'
+	   'adas = super_pkg.ADAS:main',
+	   'speedometer = super_pkg.Speedometer:main',
+       'speed_alarm = super_pkg.SpeedAlarm:main'
         ],
     },
 )
